@@ -20,6 +20,18 @@ app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
+// API routes
+app.get("/api/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "./db/db.json"));
+});
+
+app.post("/api/notes", function(req, res) {
+
+});
+
+app.delete("/api/notes/:id", function(req, res) {
+
+});
 
 // start the server
 app.listen(PORT, function() {
