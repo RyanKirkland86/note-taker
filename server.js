@@ -1,6 +1,7 @@
 // dependencies
 var express = require("express");
 var path = require("path");
+var fs = require("fs");
 
 // set up express
 var app = express();
