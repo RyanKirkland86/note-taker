@@ -11,6 +11,9 @@ var PORT = process.env.PORT || 3600;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//set notes to read the db.json file and parse it
+var notes = JSON.parse(fs.readFileSync('./db/db.json'));
+
 // HTML routes
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
@@ -22,11 +25,14 @@ app.get("/notes", function(req, res) {
 
 // API routes
 app.get("/api/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "./db/db.json"));
+    // res.sendFile(path.join(__dirname, "./db/db.json"));
+    return res.json(notes);
 });
 
 app.post("/api/notes", function(req, res) {
-
+    var newNote = req.body;
+    console.log(newNote);
+    notes.push(newNote);
 });
 
 app.delete("/api/notes/:id", function(req, res) {
