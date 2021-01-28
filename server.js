@@ -11,6 +11,8 @@ var PORT = process.env.PORT || 3600;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static('public'));
+
 //set notes to read the db.json file and parse it
 var notes = JSON.parse(fs.readFileSync('./db/db.json'));
 
@@ -33,6 +35,10 @@ app.post("/api/notes", function(req, res) {
     var newNote = req.body;
     console.log(newNote);
     notes.push(newNote);
+    fs.writeFile('./db/db.json', JSON.stringify(notes), function(err) {
+        if (err) throw err;
+    });
+    res.send();
 });
 
 app.delete("/api/notes/:id", function(req, res) {
