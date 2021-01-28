@@ -27,22 +27,32 @@ app.get("/notes", function(req, res) {
 
 // API routes
 app.get("/api/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "./db/db.json"));
-    // return res.json(notes);
+    // res.sendFile(path.join(__dirname, "./db/db.json"));
+    return res.json(notes);
 });
 
 app.post("/api/notes", function(req, res) {
     var newNote = req.body;
-    console.log(newNote);
+    newNote.id = notes.length + 1;
+    // console.log(newNote);
     notes.push(newNote);
     fs.writeFile('./db/db.json', JSON.stringify(notes), function(err) {
         if (err) throw err;
     });
     res.send();
+    // console.log(notes);
 });
 
 app.delete("/api/notes/:id", function(req, res) {
-
+    // var id = req.params.id;
+    // console.log(id);
+    notes.splice(req.params.id-1, 1);
+    // notes.id = notes[i+1];
+    console.log(notes);
+    fs.writeFile('./db/db.json', JSON.stringify(notes), function(err) {
+        if (err) throw err;
+    });
+    res.send();
 });
 
 // start the server
