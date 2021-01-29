@@ -33,8 +33,23 @@ npm install path
 
 ## Process:
 
+When the user clicks on the Get Started button, they are taken to the note take section. The user can add a Note Title and Note Text into the field. When they are ready to save they can click the save icon and the note is added to the list. All notes added can be clicked on on the lefthand side to retrieve the note into the field for viewing. The user can either click the pencil icon to write a new note, or click the trash can icon to delete a note.
+
 ![Image](https://github.com/RyanKirkland86/note-taker/blob/main/public/assets/ExpressNoteTaker%20DEMO.jpg)
 
+```javascript
+app.post("/api/notes", function(req, res) {
+    var newNote = req.body;
+    newNote.id = notes.length + 1;
+    notes.push(newNote);
+    fs.writeFile('./db/db.json', JSON.stringify(notes), function(err) {
+        if (err) throw err;
+    });
+    res.send();
+});
+```
+
+This bit of code is what makes the notes. Each note is grabbed from the body input, assigned a unique ID, and then pushed into the notes array. Then the notes array is stringified and written to our dynamic JSON file.
 
 ## Authors:
 - Ryan Kirkland
