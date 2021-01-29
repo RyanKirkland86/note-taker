@@ -6,7 +6,7 @@ This is an application that can be used to write, save, and delete notes. This a
 
 [Deployed Site](https://gentle-brook-09674.herokuapp.com/)
 
-![Image]()
+![Image](https://github.com/RyanKirkland86/note-taker/blob/main/public/assets/ExpressNoteTaker%20HOME.jpg)
 
 <br>
 
@@ -23,10 +23,17 @@ This is an application that can be used to write, save, and delete notes. This a
 
 ## Installation:
 
+To install the necessary dependencies, these lines of code must be run in the command line:
 
+```
+npm install express
+
+npm install path
+```
 
 ## Process:
 
+![Image](https://github.com/RyanKirkland86/note-taker/blob/main/public/assets/ExpressNoteTaker%20DEMO.jpg)
 
 
 ## Authors:
