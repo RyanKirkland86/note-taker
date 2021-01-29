@@ -48,10 +48,15 @@ app.delete("/api/notes/:id", function(req, res) {
     // console.log(id);
     notes.splice(req.params.id-1, 1);
     // notes.id = notes[i+1];
-    console.log(notes);
+    // console.log(notes);
     fs.writeFile('./db/db.json', JSON.stringify(notes), function(err) {
         if (err) throw err;
     });
+    // for (i = 0; i < notes.length; i++) {
+    //     var newId = req.body;
+    //     newId.id = notes[i].id + 1;
+    // };
+    // console.log(notes);
     res.send();
 });
 
