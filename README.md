@@ -18,7 +18,6 @@ This is an application that can be used to write, save, and delete notes. This a
 - [Inquirer.js](https://www.npmjs.com/package/inquirer)
 - [Express.js](https://expressjs.com/)
 - [JSON](https://www.json.org/json-en.html)
-- [Jest](https://jestjs.io/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Installation:
