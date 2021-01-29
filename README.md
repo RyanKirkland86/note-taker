@@ -2,11 +2,11 @@
 
 ## Project:
 
+This is an application that can be used to write, save, and delete notes. This application uses an Express.js backend to save and retrieve note data from a JSON file.
 
+[Deployed Site](https://gentle-brook-09674.herokuapp.com/)
 
 ![Image]()
-
-[VideoDEMO]()
 
 <br>
 
@@ -15,8 +15,9 @@
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/en/)
-- [JSON](https://www.json.org/json-en.html)
 - [Inquirer.js](https://www.npmjs.com/package/inquirer)
+- [Express.js](https://expressjs.com/)
+- [JSON](https://www.json.org/json-en.html)
 - [Jest](https://jestjs.io/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
